@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EXAM10TH DEC</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://kit.fontawesome.com/5a010fa73c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+	<img src="wp8930684.jpg" alt="laptop-header">
+	<h2>JAVASCRIPT SSECTION</h2>
+</header>
+
+<main>
+	<div class="left">
+		<div class="crd" id="story-hold">
+			<div class="head">Book Title</div>
+			<div class="bdy">
+				<textarea name="story-box" id="story" readonly></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="right">
+		<div class="crd" id="search-bar">
+			<div class="head">SEARCH</div>
+			<div class="bdy">
+				<form id="form">
+					<label><input type="text" id="searchQ"></label>
+					<button type="submit">search</button>
+				</form>
+			</div>
+		</div>
+		<div class="crd">
+			<div class="head">Select a Book</div>
+			<div class="bdy">
+				<ul>
+					<li><a onclick="changeBook(1)">Alice In Wonderland</a></li>
+					<li><a onclick="changeBook(2)">Lord of the Rings</a></li>
+					<li><a onclick="changeBook(3)">Dr. Jekyll and Mr. Hyde</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="crd">
+			<div class="head">Most Used Words</div>
+			<div class="bdy" id="most-used">
+			</div>
+		</div>
+		<div class="crd">
+			<div class="head">Least Used Words</div>
+			<div class="bdy" id="least-used">
+			</div>
+		</div>
+		<div class="crd">
+			<div class="head">Document Stats</div>
+			<div class="bdy" id="doc-stats">
+			</div>
+		</div>
+	</div>
+</main>
+
+<script src="javascript.js"></script>
+</body>
+</html>
