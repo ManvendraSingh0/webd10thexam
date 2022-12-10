@@ -2,8 +2,8 @@ document.querySelector('#search-bar').addEventListener('submit', (e) => {
     e.preventDefault();
 
     if (document.querySelector('#search-bar').children.length === 3) {
-        let lc = document.querySelector('#search-bar').lastChild;
-        lc.parentElement.removeChild(lc);
+        let lt = document.querySelector('#search-bar').lastChild;
+        lt.parentElement.removeChild(lt);
     }
 
     let searchQ = document.querySelector('#searchQ').value;
@@ -16,7 +16,7 @@ document.querySelector('#search-bar').addEventListener('submit', (e) => {
     document.querySelector('#search-bar').appendChild(sr);
 });
 
-let orgtext = '';
+let orgt = '';
 
 function changeBook(item) {
     let url = '';
@@ -34,11 +34,11 @@ function changeBook(item) {
     req.addEventListener('load', (e) => {
         document.querySelector('#story').value = "";
         document.querySelector('#story').value = e.target.responseText;
-        orgtext = e.target.responseText;
+        orgt = e.target.responseText;
         refreshStats(e.target.responseText, e.loaded);
     });
 
-    req.open('GET', `text/${url}`);
+    req.open('GET', `${url}`);
     req.send();
 }
 
@@ -96,13 +96,13 @@ function searchForWord(searchQ) {
 
     if (document.querySelector('#story').value === "")
         return;
-    document.querySelector('#story').value = orgtext;
+    document.querySelector('#story').value = orgt;
     let text = document.querySelector('#story').value;
     let cBy = '<span style="background-color: cyan">word</span>';
     cBy.replace('word', searchQ);
     text.replace(searchQ, cBy);
 
-    let arr = orgtext.split(' ');
+    let arr = orgt.split(' ');
     let count = 0
     for (let i of arr)
         if (i.toLowerCase() === searchQ.toLowerCase())
